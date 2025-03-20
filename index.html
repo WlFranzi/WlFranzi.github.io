@@ -1,74 +1,357 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-6KWC58BKXF"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-6KWC58BKXF');
-</script>
-
-    <title>The Importance of Supply Chains for Artificial Intelligence</title>
+    <title>BOUTIQUE</title>
     <style>
         body {
-            font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
-            line-height: 1.6;
-            margin: 20px;
-            background-color: #f9f9f9;
-            color: #333;
+            background-color: #000000;
+            color: #ffffff;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: row;
+            min-height: 100vh;
+            overflow: hidden;
         }
-        h1, h2 {
-            color: #2c3e50;
-        }
-        a {
-            color: #3498db;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
+        
         .container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            height: 100vh;
+        }
+        
+        .boutique-container {
+            width: 100px;
+            display: flex;
+            justify-content: center;
+            padding-top: 50px;
+        }
+        
+        .boutique-text {
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            transform: rotate(180deg);
+            font-size: 4rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            white-space: nowrap;
+            animation: smallVibrations 0.15s infinite alternate, stopAnimation 5s forwards;
+        }
+        
+        @keyframes smallVibrations {
+            0% {
+                transform: rotate(180deg) translateY(0) translateX(0);
+                text-shadow: 1px 0 0 rgba(255,0,0,0.3), -1px 0 0 rgba(0,255,255,0.3);
+            }
+            50% {
+                transform: rotate(180deg) translateY(1px) translateX(-1px);
+                text-shadow: 1.5px 0 0 rgba(255,0,0,0.3), -1.5px 0 0 rgba(0,255,255,0.3);
+            }
+            100% {
+                transform: rotate(180deg) translateY(-1px) translateX(1px);
+                text-shadow: 2px 0 0 rgba(255,0,0,0.3), -2px 0 0 rgba(0,255,255,0.3);
+            }
+        }
+        
+        @keyframes stopAnimation {
+            0%, 99% {
+                animation-play-state: running;
+            }
+            100% {
+                animation-play-state: paused;
+                transform: rotate(180deg);
+                text-shadow: none;
+            }
+        }
+        
+        .content {
+            flex: 1;
+            padding: 50px 40px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .mission-statement {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            line-height: 1.5;
+        }
+        
+        .category {
+            margin-bottom: 30px;
+        }
+        
+        .category h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .category ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin-bottom: 25px;
+        }
+        
+        .category ul li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .category ul li:before {
+            content: "* ";
+            position: absolute;
+            left: 0;
+        }
+        
+        .about {
+            margin-top: 40px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            padding-top: 30px;
+        }
+        
+        .about h2 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+        
+        .illustration {
+            margin: 30px auto;
+            width: 100%;
+            max-width: 250px;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .illustration-item {
+            width: 30%;
+        }
+        
+        .illustration svg {
+            width: 100%;
+            height: auto;
+        }
+        
+        .contact-section {
+            margin-top: 60px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            padding-top: 30px;
+        }
+        
+        .contact-form {
+            margin-top: 20px;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            background-color: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: #ffffff;
+            font-family: inherit;
+        }
+        
+        .form-group textarea {
+            min-height: 100px;
+        }
+        
+        button {
+            background-color: #ffffff;
+            color: #000000;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        
+        button:hover {
+            background-color: rgba(255,255,255,0.8);
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            
+            .boutique-container {
+                width: 100%;
+                height: auto;
+                padding: 20px;
+            }
+            
+            .boutique-text {
+                writing-mode: horizontal-tb;
+                transform: none;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+            
+            @keyframes smallVibrations {
+                0% {
+                    transform: translateY(0) translateX(0);
+                    text-shadow: 1px 0 0 rgba(255,0,0,0.3), -1px 0 0 rgba(0,255,255,0.3);
+                }
+                50% {
+                    transform: translateY(1px) translateX(-1px);
+                    text-shadow: 1.5px 0 0 rgba(255,0,0,0.3), -1.5px 0 0 rgba(0,255,255,0.3);
+                }
+                100% {
+                    transform: translateY(-1px) translateX(1px);
+                    text-shadow: 2px 0 0 rgba(255,0,0,0.3), -2px 0 0 rgba(0,255,255,0.3);
+                }
+            }
+            
+            @keyframes stopAnimation {
+                0%, 99% {
+                    animation-play-state: running;
+                }
+                100% {
+                    animation-play-state: paused;
+                    transform: none;
+                    text-shadow: none;
+                }
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>The Importance of Supply Chains for Artificial Intelligence</h1>
-        <p><strong>By Franziska Wittleder</strong> · January 10, 2025</p>
-
-          <h4><i>Unlocking the Future: How transfer learning is set out to change the AI landscape.</i></h4>
-
-        <p>The year 2024 saw global trade hit an all-time high of $33 trillion. In stark contrast, data trade — the business of data brokering — remains relatively modest, accounting for less than 1% of this figure at approximately $262 billion. Yet, the trajectory of data trade is remarkable, with a forecasted growth rate of 14% by 2025, far outpacing the 3% growth expected in global trade. This accelerating growth is driven by the increasing value of data in our digital economy, particularly as artificial intelligence continues to rise.</p>
-        
-        <p>Supply chains, both tangible and digital, are the lifeblood of our global economy. However, without transparency, they can become fertile ground for exploitation. Consider this: a T-shirt may embark on an 18,000-kilometer journey before it reaches a European store. An astonishing 80% of worldwide trade relies on these supply chains, providing livelihoods for over 450 million individuals. Alarmingly, among these workers, around 79 million children are trapped in exploitative labor conditions. The wages earned by garment workers represent a mere 0.6% of the cost of your designer T-shirt. This is not just an issue; it’s a crisis that demands collective action from governments, corporations, and consumers alike. Notably, the <a href="https://www.bmz.de/en/issues/supply-chains" target="_blank">German Supply Chain Law</a> is a groundbreaking initiative aimed at enhancing transparency in physical supply chains and curbing human rights violations, having been adopted by the German parliament in 2023.</p>
-        
-        <h2>The Digital Landscape: A New Frontier</h2>
-        <p>Now, let’s shift our focus to the digital landscape, which feels very much like the Wild West. Companies facing strict data laws at home, such as the EU, can seek refuge in countries with looser regulations, such as India, Mexico, or Egypt. Here’s the process: as an EU company, I collect large amounts of data in these foreign regions. I build an AI model and, in a second step, only add a sprinkle of domestic data to it, and voilà, I can use it for my domestic market. This sprinkle strategy hinges on a powerful concept known as <a href="https://en.wikipedia.org/wiki/Transfer_learning" target="_blank">transfer learning</a>.</p>
-        
-        <p>Transfer learning is a mechanism in AI that underscores the need for robust data regulations within digital supply chains. For an EU company, it unlocks the ability to build a model on foreign, accessible, and cheap data and use transfer learning, or so to speak, ‘fine-tune’ it, with only a minimal amount of domestic user data for its home market. In other words, transfer learning allows AI to leverage knowledge from one domain and apply it to another. For example, insights gained from <a href="https://jnm.snmjournals.org/content/65/supplement_2/241979" target="_blank">lung cancer research</a> can be utilized to identify prostate cancer. This principle extends beyond medical applications, crossing cultural boundaries.</p>
-        
-        <p>However, this raises ethical questions. When data is collected in developing countries — where costs are low and regulations are minimal — it often benefits users in more regulated environments like the West. In regions with weak data regulations, data trading can quickly become exploitative, creating a business model that thrives on fast, cheap data collection and limited oversight.</p>
-        
-        <h2>Innovative Tools for Ethical AI</h2>
-        <p>To navigate the complexities and ethical challenges of digital supply chains, we can leverage innovative tools. One such tool is the <a href="https://huggingface.co/docs/hub/en/model-cards" target="_blank">model cards</a> initiated by Margaret Mitchell from Hugging Face. These cards function as a digital passport for AI models, detailing their origins, performance, and applications. This transparency is vital for understanding the capabilities and limitations of AI models that can help mitigate data misuse.</p>
-        
-        <p>By adopting model cards, we can ensure that the data fueling AI is sourced responsibly and the AI built ethically, aligning with principles similar to fair trade in the physical realm. As we move toward an increasingly data-driven future, the lessons learned from traditional supply chains can guide our approach to the emerging data trade. The same diligence that tracks a T-shirt’s global journey should be mirrored in the flow of data through the digital landscape. Imagine a future where we can track our personal data with the same precision we use for our packages — “Oh look, my browsing history just made a pit stop in Palo Alto!”</p>
-        
-        <h2>Conclusion</h2>
-        <p>In conclusion, as we embrace the digital age, prioritizing transparency and ethical standards in both tangible and digital supply chains is essential. Only then can we create a future where the benefits of AI are shared equitably among all.</p>
+        <div class="boutique-container">
+            <div class="boutique-text">BOUTIQUE</div>
+        </div>
+        <div class="content">
+            <div class="mission-statement">
+                Our mission is to empower you with the knowledge and tools to leverage AI effectively, ensuring you stay ahead of the curve.
+            </div>
+            
+            <div class="categories">
+                <div class="category">
+                    <h3><strong>Starting Out</strong></h3>
+                    <ul>
+                        <li>What can AI actually do for my business?</li>
+                        <li>Where should I start?</li>
+                        <li>How can I get ahead of my competitors?</li>
+                    </ul>
+                </div>
+                
+                <div class="category">
+                    <h3><strong>Practical Decisions</strong></h3>
+                    <ul>
+                        <li>Should I buy ready-made AI tools or build custom ones?</li>
+                        <li>Which AI tools are trustworthy?</li>
+                        <li>How do I know if it's working?</li>
+                    </ul>
+                </div>
+                
+                <div class="category">
+                    <h3><strong>Money Matters</strong></h3>
+                    <ul>
+                        <li>How much will this cost?</li>
+                        <li>When will I see results?</li>
+                        <li>Is it worth the investment?</li>
+                    </ul>
+                </div>
+                
+                <div class="category">
+                    <h3><strong>Trust & Safety</strong></h3>
+                    <ul>
+                        <li>Can I use European services instead of American ones?</li>
+                        <li>Is my data safe?</li>
+                        <li>Will this follow all the rules?</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="illustration">
+                <!-- Three witty illustrations merging craftsmanship and technology -->
+                <div class="illustration-item">
+                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Digital Craftsman Illustration -->
+                        <circle cx="50" cy="50" r="40" fill="none" stroke="#ffffff" stroke-width="1"/>
+                        <path d="M30,60 Q50,30 70,60" fill="none" stroke="#ffffff" stroke-width="2"/>
+                        <rect x="45" y="60" width="10" height="20" fill="#ffffff"/>
+                        <circle cx="40" cy="40" r="5" fill="#ffffff"/>
+                        <circle cx="60" cy="40" r="5" fill="#ffffff"/>
+                        <path d="M35,70 Q50,80 65,70" fill="none" stroke="#ffffff" stroke-width="1.5"/>
+                        <path d="M20,40 L30,50 M70,50 L80,40" fill="none" stroke="#ffffff" stroke-width="1"/>
+                        <circle cx="50" cy="50" r="25" fill="none" stroke="#ffffff" stroke-dasharray="3,3" stroke-width="1"/>
+                    </svg>
+                </div>
+                
+                <div class="illustration-item">
+                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Tech-Enhanced Artisan Illustration -->
+                        <rect x="20" y="20" width="60" height="60" fill="none" stroke="#ffffff" stroke-width="1"/>
+                        <circle cx="50" cy="50" r="20" fill="none" stroke="#ffffff" stroke-width="2"/>
+                        <line x1="20" y1="50" x2="80" y2="50" stroke="#ffffff" stroke-width="1"/>
+                        <line x1="50" y1="20" x2="50" y2="80" stroke="#ffffff" stroke-width="1"/>
+                        <path d="M40,40 L60,60 M40,60 L60,40" stroke="#ffffff" stroke-width="1.5"/>
+                        <circle cx="50" cy="50" r="5" fill="#ffffff"/>
+                        <path d="M30,30 C35,25 45,25 50,30 S65,35 70,30" fill="none" stroke="#ffffff" stroke-width="1"/>
+                        <path d="M30,70 C35,75 45,75 50,70 S65,65 70,70" fill="none" stroke="#ffffff" stroke-width="1"/>
+                    </svg>
+                </div>
+                
+                <div class="illustration-item">
+                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <!-- AI-Artistry Blend Illustration -->
+                        <polygon points="50,20 80,50 50,80 20,50" fill="none" stroke="#ffffff" stroke-width="2"/>
+                        <circle cx="50" cy="50" r="15" fill="none" stroke="#ffffff" stroke-width="1"/>
+                        <path d="M30,30 Q50,20 70,30 T50,70" fill="none" stroke="#ffffff" stroke-width="1"/>
+                        <line x1="35" y1="35" x2="65" y2="65" stroke="#ffffff" stroke-width="1" stroke-dasharray="2,2"/>
+                        <line x1="35" y1="65" x2="65" y2="35" stroke="#ffffff" stroke-width="1" stroke-dasharray="2,2"/>
+                        <circle cx="40" cy="40" r="3" fill="#ffffff"/>
+                        <circle cx="60" cy="60" r="3" fill="#ffffff"/>
+                        <circle cx="40" cy="60" r="3" fill="#ffffff"/>
+                        <circle cx="60" cy="40" r="3" fill="#ffffff"/>
+                    </svg>
+                </div>
+            </div>
+            
+            <div class="about">
+                <h2>About</h2>
+                <p>I am Franziska, 10+ years in Artificial Intelligence in various roles @SoundCloud, @writer @Ring/Amazon, empathetic, results driven and X</p>
+            </div>
+            
+            <div class="contact-section">
+                <p>Do any of these questions resonate or do you have more? Get in touch, we are looking forward to tackling your AI strategy together.</p>
+                
+                <form class="contact-form" action="mailto:Franziska.wittleder@gmail.com" method="post" enctype="text/plain">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </div>
     </div>
 </body>
 </html>
